@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gsg_flutter/home.dart';
+import 'package:gsg_flutter/screens/home.dart';
 
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Home()));
