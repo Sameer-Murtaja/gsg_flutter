@@ -10,7 +10,6 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
         title: Image.asset('assets/logo.png'),
         actions: [
           Image.asset('assets/bell.png'),
@@ -147,4 +146,9 @@ class Home extends StatelessWidget {
       ),
     );
   }
+}
+
+// High level function
+void showSnackBar(BuildContext context) {
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Hello')));
 }
