@@ -50,7 +50,7 @@ class Home extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 20),
-                Image.asset('offer.png', fit: BoxFit.fitWidth),
+                Image.asset("assets/offer.png", fit: BoxFit.fitWidth),
                 SizedBox(height: 20),
                 SectionWidget(sectionTitle: 'Top Rated Freelancers'),
                 SizedBox(height: 10),
@@ -130,14 +130,32 @@ class Home extends StatelessWidget {
                 ServiceInfo(
                   serviceImg:
                       'https://thumbs.dreamstime.com/b/conceptual-hand-writing-showing-our-services-concept-meaning-occupation-function-serving-intangible-products-male-wear-160644151.jpg',
+                  userImg:
+                      'https://www.mensjournal.com/.image/t_share/MTk2MTM2NTcwNDMxMjg0NzQx/man-taking-selfie.jpg',
+                  userName: "Ahemd",
+                  userTitle: "Beautician",
+                  details: "Dolon Top service for you",
+                  rate: 4.9,
                 ),
                 ServiceInfo(
                   serviceImg:
                       'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2VydmljZXN8ZW58MHx8MHx8fDA%3D',
+                  userImg:
+                      'https://www.mensjournal.com/.image/t_share/MTk2MTM2NTcwNDMxMjg0NzQx/man-taking-selfie.jpg',
+                  userName: "Ahemd",
+                  userTitle: "Beautician",
+                  details: "Dolon Top service for you",
+                  rate: 4.9,
                 ),
                 ServiceInfo(
                   serviceImg:
                       'https://www.shutterstock.com/image-photo/double-exposure-business-concept-hands-260nw-1909882510.jpg',
+                  userImg:
+                      'https://www.mensjournal.com/.image/t_share/MTk2MTM2NTcwNDMxMjg0NzQx/man-taking-selfie.jpg',
+                  userName: "Ahemd",
+                  userTitle: "Beautician",
+                  details: "Dolon Top service for you",
+                  rate: 4.9,
                 ),
               ],
             ),
