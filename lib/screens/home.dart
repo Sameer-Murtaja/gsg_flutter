@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:gsg_flutter/routes.dart';
+import 'package:gsg_flutter/screens/login.dart';
 import 'package:gsg_flutter/widgets/freelancer_info.dart';
 import 'package:gsg_flutter/widgets/section_widget.dart';
 import 'package:gsg_flutter/widgets/service_info.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
-
+  const Home({super.key, this.name});
+  final String? name;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +18,12 @@ class Home extends StatelessWidget {
           SizedBox(width: 20),
           Image.asset('assets/cart.png'),
           SizedBox(width: 20),
+          IconButton(
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, Routes.login);
+            },
+            icon: Icon(Icons.logout),
+          ),
         ],
       ),
       body: Center(
@@ -24,6 +32,10 @@ class Home extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                Align(
+                  child: Text('Hello ${name ?? 'Guest'}'),
+                  alignment: Alignment.centerLeft,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -50,7 +62,7 @@ class Home extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 20),
-                Image.asset('offer.png', fit: BoxFit.fitWidth),
+                Image.asset('assets/offer.png', fit: BoxFit.fitWidth),
                 SizedBox(height: 20),
                 SectionWidget(sectionTitle: 'Top Rated Freelancers'),
                 SizedBox(height: 10),
