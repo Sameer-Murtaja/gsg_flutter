@@ -1,13 +1,101 @@
 import 'package:flutter/material.dart';
+import 'package:gsg_flutter/data/freelancer_model.dart';
 import 'package:gsg_flutter/routes.dart';
 import 'package:gsg_flutter/screens/login.dart';
-import 'package:gsg_flutter/widgets/freelancer_info.dart';
+import 'package:gsg_flutter/widgets/freelancer_info_widget.dart';
 import 'package:gsg_flutter/widgets/section_widget.dart';
 import 'package:gsg_flutter/widgets/service_info.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key, this.name});
+  Home({super.key, this.name});
   final String? name;
+  final List<FreelancerModel> freelancers = [
+    FreelancerModel(
+      img:
+          'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D',
+      name: 'Ahmed',
+      title: 'Engineer',
+      rate: 1,
+    ),
+    FreelancerModel(
+      img:
+          'https://www.mensjournal.com/.image/t_share/MTk2MTM2NTcwNDMxMjg0NzQx/man-taking-selfie.jpg',
+      name: 'Mohamed',
+      title: 'Doctor',
+      rate: 3.5,
+    ),
+    FreelancerModel(
+      img:
+          'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D',
+      name: 'Ahmed',
+      title: 'Engineer',
+      rate: 5,
+    ),
+    FreelancerModel(
+      img:
+          'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D',
+      name: 'Ahmed',
+      title: 'Engineer',
+      rate: 1,
+    ),
+    FreelancerModel(
+      img:
+          'https://www.mensjournal.com/.image/t_share/MTk2MTM2NTcwNDMxMjg0NzQx/man-taking-selfie.jpg',
+      name: 'Mohamed',
+      title: 'Doctor',
+      rate: 3.5,
+    ),
+    FreelancerModel(
+      img:
+          'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D',
+      name: 'Ahmed',
+      title: 'Engineer',
+      rate: 5,
+    ),
+    FreelancerModel(
+      img:
+          'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D',
+      name: 'Ahmed',
+      title: 'Engineer',
+      rate: 1,
+    ),
+    FreelancerModel(
+      img:
+          'https://www.mensjournal.com/.image/t_share/MTk2MTM2NTcwNDMxMjg0NzQx/man-taking-selfie.jpg',
+      name: 'Mohamed',
+      title: 'Doctor',
+      rate: 3.5,
+    ),
+    FreelancerModel(
+      img:
+          'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D',
+      name: 'Ahmed',
+      title: 'Engineer',
+      rate: 5,
+    ),
+    FreelancerModel(
+      img:
+          'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D',
+      name: 'Ahmed',
+      title: 'Engineer',
+      rate: 1,
+    ),
+    FreelancerModel(
+      img:
+          'https://www.mensjournal.com/.image/t_share/MTk2MTM2NTcwNDMxMjg0NzQx/man-taking-selfie.jpg',
+      name: 'Mohamed',
+      title: 'Doctor',
+      rate: 3.5,
+    ),
+    FreelancerModel(
+      img:
+          'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D',
+      name: 'Ahmed',
+      title: 'Engineer',
+      rate: 5,
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,74 +154,14 @@ class Home extends StatelessWidget {
                 SizedBox(height: 20),
                 SectionWidget(sectionTitle: 'Top Rated Freelancers'),
                 SizedBox(height: 10),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      FreelancerInfo(
-                        img:
-                            'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D',
-                        name: 'Ahmed',
-                        title: 'Engineer',
-                        rate: 1,
-                      ),
-                      FreelancerInfo(
-                        img:
-                            'https://www.mensjournal.com/.image/t_share/MTk2MTM2NTcwNDMxMjg0NzQx/man-taking-selfie.jpg',
-                        name: 'Mohamed',
-                        title: 'Doctor',
-                        rate: 3.5,
-                      ),
-                      FreelancerInfo(
-                        img:
-                            'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D',
-                        name: 'Ahmed',
-                        title: 'Engineer',
-                        rate: 5,
-                      ),
-                      FreelancerInfo(
-                        img:
-                            'https://www.mensjournal.com/.image/t_share/MTk2MTM2NTcwNDMxMjg0NzQx/man-taking-selfie.jpg',
-                        name: 'Mohamed',
-                        title: 'Doctor',
-                        rate: 4.2,
-                      ),
-                      FreelancerInfo(
-                        img:
-                            'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D',
-                        name: 'Ahmed',
-                        title: 'Engineer',
-                        rate: 2.5,
-                      ),
-                      FreelancerInfo(
-                        img:
-                            'https://www.mensjournal.com/.image/t_share/MTk2MTM2NTcwNDMxMjg0NzQx/man-taking-selfie.jpg',
-                        name: 'Mohamed',
-                        title: 'Doctor',
-                        rate: 3.33333333,
-                      ),
-                      FreelancerInfo(
-                        img:
-                            'https://www.mensjournal.com/.image/t_share/MTk2MTM2NTcwNDMxMjg0NzQx/man-taking-selfie.jpg',
-                        name: 'Mohamed',
-                        title: 'Doctor',
-                        rate: 3.33333333,
-                      ),
-                      FreelancerInfo(
-                        img:
-                            'https://www.mensjournal.com/.image/t_share/MTk2MTM2NTcwNDMxMjg0NzQx/man-taking-selfie.jpg',
-                        name: 'Mohamed',
-                        title: 'Doctor',
-                        rate: 3.33333333,
-                      ),
-                      FreelancerInfo(
-                        img:
-                            'https://www.mensjournal.com/.image/t_share/MTk2MTM2NTcwNDMxMjg0NzQx/man-taking-selfie.jpg',
-                        name: 'Mohamed',
-                        title: 'Doctor',
-                        rate: 3.33333333,
-                      ),
-                    ],
+                SizedBox(
+                  height: 150,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return FreelancerInfoWidget(model: freelancers[index]);
+                    },
+                    itemCount: freelancers.length,
                   ),
                 ),
                 SizedBox(height: 20),
