@@ -3,7 +3,7 @@ import 'package:gsg_flutter/routes.dart';
 import 'package:gsg_flutter/screens/freelancer_details.dart';
 import 'package:gsg_flutter/screens/home.dart';
 import 'package:gsg_flutter/screens/login.dart';
-import 'package:gsg_flutter/screens/all_products.dart';
+import 'package:gsg_flutter/screens/main_nav_screen.dart';
 import 'package:gsg_flutter/screens/signup.dart';
 
 void main() {
@@ -14,10 +14,10 @@ void main() {
         Routes.login: (context) => Login(),
         Routes.home: (context) => Home(),
         Routes.signup: (context) => Signup(),
-        Routes.allProducts: (context) => AllProducts(),
+        Routes.allProducts: (context) => MainNavScreen(),
         Routes.freelancerDetails: (context) => FreelancerDetails(),
       },
-      home: AllProducts(),
+      home: MainNavScreen(),
     ),
   );
 }
