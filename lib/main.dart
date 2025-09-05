@@ -15,9 +15,9 @@ void main() {
         Routes.home: (context) => Home(),
         Routes.signup: (context) => Signup(),
         Routes.main: (context) => MainApp(),
-        Routes.freelancerDetails : (context) => FreelancerDetails()
+        Routes.freelancerDetails: (context) => FreelancerDetails(),
       },
-      home: Home(),
+      home: MainApp(),
     ),
   );
 }
@@ -26,3 +26,7 @@ void main() {
 // MatrialApp - Scaffold - Center - Text
 // AppBar - Icon - Column - Row - Container
 // Images (Network - Assets)
+
+//https://www.linkedin.com /in/ahmedfathyalex/edit/forms/certification/new/  ?profileFormEntryPoint=PROFILE_COMPLETION_HUB
+// https://www.news.com/news/sports?type=football
+// Endpoint [baseurl / path ? queries]

@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:gsg_flutter/routes.dart';
+import 'package:http/http.dart';
 
 class MainApp extends StatefulWidget {
   MainApp({super.key});
@@ -39,7 +42,14 @@ class _MainAppState extends State<MainApp> {
           Icon(Icons.home),
         ],
       ),
-      body: Center(child: screens[index]),
+      body: Center(child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(onPressed: (){
+            fetchData();
+          }, child: Text('fetch data'))
+        ],
+      )),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
         onTap: (value) {
@@ -67,4 +77,11 @@ class _MainAppState extends State<MainApp> {
       ),
     );
   }
+
+
+  fetchData()async{
+    var response = await get(Uri.parse('https://fakestoreapi.com/products'));
+    log(response.body);
+  }
+  
 }

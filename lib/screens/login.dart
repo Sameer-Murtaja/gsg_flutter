@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:gsg_flutter/routes.dart';
-import 'package:gsg_flutter/screens/home.dart';
-import 'package:gsg_flutter/screens/signup.dart';
+
 import 'package:gsg_flutter/widgets/custom_text_field.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   Login({super.key});
 
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   final TextEditingController emailCont = TextEditingController();
+
   final TextEditingController passwordController = TextEditingController();
+
   final _formKey = GlobalKey<FormState>();
+
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +57,7 @@ class Login extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () => _login(context),
-                child: Text('login'),
+                child: isLoading ? CircularProgressIndicator() : Text('login'),
               ),
             ],
           ),
@@ -58,13 +66,18 @@ class Login extends StatelessWidget {
     );
   }
 
-  _login(BuildContext context) {
+  _login(BuildContext context) async {
+    setState(() {
+      isLoading = true;
+    });
+    await Future.delayed(Duration(seconds: 2));
+    setState(() {
+      isLoading = false;
+    });
     if (_formKey.currentState!.validate()) {
       // search how to pass params in named args
       // search about recommended way of navigation in flutter ? and why
-      // what is the difference between Navigator 1.0 and Navigator 2.0 
-
-      
+      // what is the difference between Navigator 1.0 and Navigator 2.0
       Navigator.pushReplacementNamed(context, Routes.home);
       // Navigator.push(
       //   context,
