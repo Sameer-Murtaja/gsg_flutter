@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gsg_flutter/routes.dart';
 import 'package:gsg_flutter/screens/freelancer_details.dart';
 import 'package:gsg_flutter/screens/home.dart';
+import 'package:gsg_flutter/screens/login.dart';
 import 'package:gsg_flutter/screens/main_nav_screen.dart';
 import 'package:gsg_flutter/screens/signup.dart';
 
